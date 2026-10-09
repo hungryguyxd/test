@@ -1,0 +1,16 @@
+name: for call
+
+on:
+  workflow_call:
+    inputs:
+      username:
+        required: true
+        type: string
+        description: 'Имя пользователя'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print username
+        run: echo "Привет, ${{ inputs.username }}!"
